@@ -26,11 +26,11 @@
 
 \clearpage\pagenumbering{roman}  % This makes the page numbers Roman (i, ii, etc)
 
-\title{Not Finished, But Abandoned}
-\author{Buckingham B.~Badger}
-\department{Computer Sciences}
+\title{Some Applications of Machine Learning in Edge Computing and Mobility}
+\author{Anantharaghavan Sridhar}
+\department{Electrical Engineering}
 
-\date{2008}
+\date{2016}
 
 \begin{document}
 
@@ -52,9 +52,12 @@
 \include{frontmatter/frontmatter}
 
 %% Now include the tex files for each chapter, like so (I put these in separate dirs): 
-% \include{intro/intro}
-% \include{motivation/motivation}
-% \include{related/related}
+\include{intro/intro}
+\include{water/water}
+\include{spectrum/spectrum}
+\include{sound/sound}
+\include{conclusion/conclusion}
+\include{futureWork/futureWork}
 
 %% etc, etc.
 
@@ -64,13 +67,13 @@
 % \end{appendices}
 
 %% Are you a big nerd with a colophon?  Add it here.
-\begin{colophon}
-\input{backmatter/colophon}
-\end{colophon}
+% \begin{colophon}
+% \input{backmatter/colophon}
+% \end{colophon}
 
 %% McBride is a very nice style (some version is included in this distribution)
 \bibliographystyle{mcbride}
-\bibliography{your-bib-file}
+\bibliography{refs/refs.bib}
 
 %% Want an index?  Neither did I.
 %\printindex
