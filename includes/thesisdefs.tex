@@ -44,14 +44,13 @@
 % \c@page\z@ -- deleted: count title page in thesis
 }{\if@restonecol\twocolumn \else \newpage \fi}
 
-\gdef\@degree{Doctor of Philosophy}    %Default is PhD
+\gdef\@degree{Master of Science}    %Default is PhD
 \gdef\@doctype{A dissertation}         %Default is dissertation
 
 \gdef\@department{(Electrical Engineering)} % Default is Electical Engineering
 \gdef\@defensedate{01/01/2100}% Default is a long time from now.
 \gdef\@committee{
-  Jane Doeverything, Professor, Electrical Engineering\\
-  John Dosomethings, Associate Professor, Electrical Engineering\\
+  Suman Banerjee, Professor, Computer Sciences
   }
 
 \renewcommand{\maketitle}{%
@@ -76,9 +75,9 @@
       UNIVERSITY OF WISCONSIN--MADISON\\[\@thesistitlemedskip]
       \@date
     \end{center}
-    \hspace*{-0.7in}Date of final oral examination: \@defensedate \\[\@thesistitlemedskip]
+    % \hspace*{-0.7in}Date of final oral examination: \@defensedate \\[\@thesistitlemedskip]
     \hspace*{-0.7in}The dissertation is approved by the following members of the 
-    Final Oral Committee:\\
+    Final Committee:\\
     \@committee
   \end{titlepage}
   \setcounter{footnote}{0}
