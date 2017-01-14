@@ -16,7 +16,7 @@
 
 %% You should use natbib
 \IfFileExists{natbib.sty}{%
-\usepackage{natbib}%
+\usepackage[numbers]{natbib}%
 }{}
 
 %% You probably need appendix, if you want appendices
@@ -58,7 +58,12 @@
 \usepackage{listings}%
 }{}
 
-
+% MY includes
+\usepackage{array}
+\usepackage[usenames, dvipsnames]{color}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage[labelfont=bf,justification=centering]{caption}
+\usepackage{tabularx}
 
 %% Get rid of ugly borders around PDF hyperlinks (e.g. for cross-references, bib entries, or URLs)
 \hypersetup{pdfborder = 0 0 0}
