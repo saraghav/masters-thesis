@@ -1,0 +1,35 @@
+
+\section{Introduction}
+
+Existing spectrum databases \cite{GoogleSpectrumDatabase} \cite{SpectrumBridge} \cite{MicrosoftWhitespaces} in the USA are populated based on RF propagation models.
+ Consequently, the databases are likely to have inaccurate estimates of spectral power and occupancy.
+ There have been wealth of spectrum measurement efforts aimed at recording ground truth data of spectrum usage to better quantify utilization and occupancy and improve the propagation models.
+ These efforts have seen a lot of interest in the context of cognitive radio applications and dynamic spectrum management which are approaches to maximize spectrum utilization \cite{SpectrumForCogRadio1} \cite{ChicagoSpectrum} \cite{ChicagoSpectrum2} \cite{SpectrumDynamics}.
+
+
+An important concern in deploying devices that support dynamic spectrum access is the identification of areas where spectrum utilization experiences a lot of temporal variations.
+ Applications supporting dynamic spectrum access in such areas can take advantage of temporal variations in spectrum utilization to improve their connectivity.
+ For example, small cell deployments supporting dynamic spectrum access can take advantage of different under-utilized frequency bands during the course of a day and improve backhaul bandwidth.
+ Clearly, deployments supporting dynamic spectrum access call for online spectrum measurement for feedback to minimize the chances of interfering with other applications.
+
+The first step to realize such deployments is to identify areas that see significant temporal variations and pick the best candidates from this information.
+ I propose a method to study temporal variations in spectrum utilization by uncovering missing samples from opportunistic spectrum measurements.
+ I show that opportunistic spectrum measurements are sparse by nature and propose three sources of sparsity associated with these measurements.
+ Prior work by Zhang and Banerjee \cite{VScope} \cite{VScope2} discusses opportunistic spectrum measurements as a way to measure 'anchor points' to improve the information quality in spectrum databases.
+ They describe a system 'VScope' which uses a spectrum analyzer placed in a public transit vehicle, to collect spectrum measurements across a city.
+ I reuse the data gathered from VScope \footnote{I refer to the data gathered as part of the VScope \cite{VScope} project as "VScope data" for the rest of the thesis.} and examine its characteristics and propose solutions that uncover the missing samples with high accuracy.
+ I also note that, with large amounts of spectrum data that has been gathered across the world \cite{petrin2004measurement} \cite{ChicagoSpectrum} \cite{ChicagoSpectrum2} \cite{SpectrumDynamics} \cite{GoogleSpectrumDatabase} \cite{MicrosoftWhitespaces} \cite{SpectrumIndia} \cite{SpectrumDataMining} I believe this approach would be useful to study temporal variations in spectrum utilization.
+
+In this chapter, I discuss applying a technique called Matrix Completion \cite{CandesRecht} (from Collaborative Filtering literature) to uncover the missing samples.
+ I justify the applicability of this technique and evaluate its performance on 6 months of sparse spectrum measurements collected in the City of Madison.
+ I show that even with simplifying linearity assumptions on the spectrum measurement data, it is possible to uncover missing samples with an error less than 5 dBm in about 80\% of measurements.
+
+By uncovering missing spectrum measurements using this approach, studying the dynamics of spectrum usage and trends in mobility is made possible.
+ For wireless infrastructure development surveys it is useful to quantify the impact of new infrastructure based on location.
+ I see value for this approach in this context as well, since uncovering missing samples allows for inferences based on a complete data set.
+ I also see value in regulatory efforts for wireless spectrum since this approach could potentially uncover violations in spectrum usage.
+ Additionally, this approach has low computational overhead and recent advances in Machine Learning allow for distributed implementations \cite{Hogwild} \cite{Cyclades}.
+
+Sparsely sampled crowdsourced measurements reduce the burden of deploying comprehensive spectrum measurement devices.
+ However, because of the missing samples, crowdsourced data or opportunistic measurements cannot be used "as is" for analyses.
+ Our approach helps uncover actionable data from crowdsourced spectrum measurements \cite{WiSee} with a computationally light algorithm that can be implemented on mobile devices.

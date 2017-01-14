@@ -1,0 +1,42 @@
+
+\section{Applying Matrix Completion to Estimate Missing Samples}
+
+In this section, I propose a method to address the Route Induced Sparsity in spectrum data measurement.
+
+\subsection{Assumptions}
+
+To make the analysis tractable, I make the following assumptions.
+
+\begin{enumerate}
+\item Spectrum measurements remain the same in a 200 m x 200 m square area
+\item There is an underlying linear relationship between the sampled data points across time and frequency, at a single location
+\item The power measurement remains constant in a one hour time window. In other words, a single measurement during any hour of the day is considered to be representative of the power measurement for the entire hour. 
+\end{enumerate}
+
+Assumption 1 is justified because most cellular frequencies possess this range, considering that all the VScope measurements are concentrated on the road within a small area (no decay owing to buildings or terrain).
+
+Assumption 2 is justified based on my conjecture in Section \ref{subsubsec:KeyIdea}.
+
+Assumption 3 is not a great assumption, since it ignores the spectrum dynamics within a single hour (from our definition, at least 5 measurements within the hour qualify as sufficiently dense).
+ However, since the objective is to address the Route Induced Sparsity, there is some merit to this simplification.
+ Since the spectrum analyzer is placed on a public transit vehicle, the samples are likely to be collected at times when there is a significant amount of user mobility i.e. the samples are likely to be at the "interesting" points of time for the dynamics of spectrum usage.
+ Moreover, I demonstrate good performance of this technique even in this case, which possibly indicates that the temporal dynamics of the spectrum within the hour may not be too significant.
+
+\subsection{Implementation}
+
+I organize the VScope data in the following manner:
+
+\begin{itemize}
+\item We arrange the data in a matrix form, with each row representing the hour of day and each column representing 10 MHz frequency bands.
+\item Since the highest concentration of user traffic and public transit occurs between 8 AM and 6 PM, I confine the analysis to this time window within a certain day. This is also the same window in which most of the VScope samples are concentrated in.
+\item The spectrum analyzer measures the power in 100 MHz chunks with a precision of 4 kHz (26215 values). We reduce this to 10 values (corresponding to 10 MHz each). The reduction is done by computing the mean power in the 10 MHz band
+\item The frequencies that I choose to form are matrix are 100 MHz bands starting at the following frequencies: 300 MHz, 500 MHz, 600 MHz, 700 MHz, 800 MHz, 1800 MHz, 1900 MHz, 2100 MHz, 2400 MHz, 2500 MHz
+\item The resulting matrix is of size (10, 100)
+\item We include the 500 MHz and 600 MHz TV spectrum bands since they are fairly constant and help the algorithm "connect" or infer relationships between multiple rows with small number of measurements
+\end{itemize}
+
+The matrix so constructed should be of low rank owing to the linear relationship between the samples (Section \ref{subsubsec:KeyIdea}).
+ As a result of this, it is possible to use the low-rank matrix completion technique proposed by Candes and Recht \cite{CandesRecht} to uncover the missing samples.
+ At the core of this approach is the expectation that the matrix is low-rank, which stems from my conjecture about linear relationships between samples.
+ I implement the technique using the algorithm proposed in \cite{SVThresholding}.
+
