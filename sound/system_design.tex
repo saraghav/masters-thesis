@@ -1,0 +1,17 @@
+
+\section{dbHound: System Design}
+\label{sec:system_design}
+
+The dBHound app is designed to simulate a layer between the raw audio stream and voice-enabled mobile applications.
+ The applications only receive the obfuscated audio stream for providing their voice-enabled features.
+ Any application that requires access to raw audio needs to request for permission from the user every time.
+
+\TODO{figure illustrating this concept}.
+
+For preserving privacy, I propose a two-part solution:
+\begin{itemize}
+\item A computationally light transformation that removes conversational information from audio but preserves the ability to recognize a desired list of keywords.
+\item A computationally light inference technique to spot the keywords from a stream of transformed audio data.
+\end{itemize}
+
+

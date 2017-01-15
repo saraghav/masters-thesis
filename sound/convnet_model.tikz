@@ -1,0 +1,73 @@
+\begin{figure}[!t]
+\centering
+\tikzset{%
+    cascaded/.style={%
+        general shadow={%
+            shadow scale=1,
+            shadow xshift=-1ex,
+            shadow yshift=1ex,
+            draw,
+            thick,
+            fill=white
+        },
+        general shadow={%
+            shadow scale=1,
+            shadow xshift=-.5ex,
+            shadow yshift=.5ex,
+            draw,
+            thick,
+            fill=white
+        },
+        fill=white,
+        draw,
+        thick,
+        minimum width=1.5cm,
+        minimum height=2cm
+    }
+}
+
+\tikzstyle{vecArrowShort}=[thick,
+                      shorten >= 5.5pt,
+                      postaction={draw,line width=2pt, black, shorten >= 4.5pt}
+]
+\tikzstyle{vecArrow}=[thick,
+                      postaction={draw,line width=2pt, black}
+]
+
+\tikzstyle{maxpool} = [rectangle, draw, fill=yellow!20, text centered, rounded corners]
+\tikzstyle{conv} = [rectangle, draw, fill=blue!20, text centered, rounded corners, minimum height=4em, minimum width=20em]
+\tikzstyle{shortline} = [draw, -latex', fill=black, vecArrowShort]
+\tikzstyle{line} = [draw, -latex', fill=black, vecArrow]
+\tikzstyle{dense} = [draw, ellipse,fill=red!20, minimum height=2em]
+\tikzstyle{input} = [rectangle, draw, fill=green!20, text centered, sharp corners, minimum height=2em, minimum width=15em, align=center]
+\tikzstyle{output} = [rectangle, draw, fill=green!20, text centered, sharp corners, minimum height=2em, minimum width=5em, align=center]
+
+\begin{tikzpicture}[node distance = 2cm, auto]
+
+% nodes
+\node [input] (input) { $N \text{Audio Samples}$ };
+\node [cascaded, conv, below of=input] (conv1) { $\text{1-D Convolutional Layer: 1}$ };
+\node [maxpool, below of=conv1] (maxpool1) { Max-Pool Layer: 1 };
+\node [cascaded, conv, below of=maxpool1] (conv2) { $\text{1-D Convolutional Layer: 2}$ };
+\node [maxpool, below of=conv2] (maxpool2) { Max-Pool Layer: 2 };
+\node [cascaded, conv, below of=maxpool2] (conv3) { $\text{1-D Convolutional Layer: 3}$ };
+\node [maxpool, below of=conv3] (maxpool3) { Max-Pool Layer: 3 };
+\node [dense, below of=maxpool3] (dense1) { $\text{Fully Connected Layer: 1}$ };
+\node [dense, below of=dense1] (dense2) { $\text{Fully Connected Layer: 2}$ };
+\node [output, below of=dense2] (output) { $(2 \times 1)$ softmax output };
+
+%arrows
+\path [shortline] (input) -- (conv1);
+\path [line] (conv1) -- (maxpool1);
+\path [shortline] (maxpool1) -- (conv2);
+\path [line] (conv2) -- (maxpool2);
+\path [shortline] (maxpool2) -- (conv3);
+\path [line] (conv3) -- (maxpool3);
+\path [line] (maxpool3) -- (dense1);
+\path [line] (dense1) -- (dense2);
+\path [line] (dense2) -- (output);
+
+\end{tikzpicture}
+\caption{Architecture of the Deep Convolutional Neural Network for Keyphrase Recognition}
+\label{fig:convnet_architecture}
+\end{figure}

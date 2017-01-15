@@ -16,7 +16,7 @@
 
 %% You should use natbib
 \IfFileExists{natbib.sty}{%
-\usepackage[numbers]{natbib}%
+\usepackage[numbers,sort&compress]{natbib}%
 }{}
 
 %% You probably need appendix, if you want appendices
@@ -64,6 +64,13 @@
 \usepackage[table,xcdraw]{xcolor}
 \usepackage[labelfont=bf,justification=centering]{caption}
 \usepackage{tabularx}
+\usepackage{afterpage}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows, shadows, decorations.markings}
+\usepackage{subcaption}
+\usepackage{multirow}
+\newcommand{\rotate}[2]{\parbox[t]{2mm}{\rotatebox[origin=c]{#2}{#1}}}%
+\usepackage{cleveref}
 
 %% Get rid of ugly borders around PDF hyperlinks (e.g. for cross-references, bib entries, or URLs)
 \hypersetup{pdfborder = 0 0 0}
@@ -99,11 +106,11 @@
 
 \usepackage[LY1]{eulervm}
 
-\ifpdf
-\usepackage[pdftex]{graphicx}
-\else
-\usepackage{graphicx}
-\fi
+% \ifpdf
+% \usepackage[pdftex]{graphicx}
+% \else
+% \usepackage{graphicx}
+% \fi
 
 \usepackage{makeidx}
 \makeindex

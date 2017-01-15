@@ -1,0 +1,41 @@
+
+
+\section{Evaluating Keyphrase Recognition Performance}
+\label{sec:recognition_evaluation}
+
+In this section, I present performance results for the ensemble of classification models learnt from keyphrase data.
+ The model is organized as follows:
+
+\begin{itemize}
+\item An individiual classification model is learnt for every keyphrase apart from "random talk".
+ The objective of the classification is to distinguish between the true keyphrase and "random talk".
+\item For a test audio clip, all 8 classification models are used to get class probabilities for the associated keyphrase.
+ The keyphrase with the maximum class probability is chosen and compared to a confidence threshold.
+ If the class probability is greater or equal to than the confidence threshold, the classification output is the true keyphrase.
+ If the class probability is lower than the confidence threshold, the classification output is "random talk".
+\end{itemize}
+
+
+Summarized in \cref{tab:probs_raw_audio,tab:probs_raw_audio_hamming_1,tab:probs_raw_audio_hamming_4,tab:probs_raw_audio_hamming_16,tab:probs_samplerate_2000,tab:probs_samplerate_1000,tab:probs_samplerate_2000_hamming_1,tab:probs_samplerate_1000_hamming_1,tab:probs_samplerate_2000_hamming_4,tab:probs_samplerate_1000_hamming_4,tab:probs_samplerate_2000_hamming_16,tab:probs_precision_1_hamming_1,tab:probs_precision_1_hamming_4,tab:probs_precision_1_hamming_16}
+ are the mean class probabilities for different keyphrase audio examples using different keyphrase models.
+ Each table corresponds to a different obfuscation technique, as noted in the caption.
+ Each table corresponds to a different obfuscation technique.
+ Each row corresponds to a classification model for a single keyphrase.
+ Each column corresponds to audio examples for a single keyphrase, or audio examples for "random talk".
+ The class probabilities in the table indicate the level to which the model has learnt the training set.
+
+
+Examples for "random talk" are an assortment of choices from three sources:
+\begin{itemize}
+\item TED-LIUM Speech Corpus
+\item Babble Noise Examples (Cafeteria noise, Public Transit Vehicle Noise)
+\item "random talk" examples from the \texttt{dbHound Keyphrase}\footnote{The \texttt{dbHound Keyphrase} android application can be found on the Google Play Store at \url{https://play.google.com/store/apps/details?id=edu.wisc.cs.dbhound}.} android application
+\end{itemize}
+
+Figures \ref{fig:roc_raw_audio} \ref{fig:roc_samplerate} \ref{fig:roc_precision_bits} show the Receiver Operating Curves (ROC) for different obfuscation techniques.
+ The Receiver Operating Curve shows the variation of the false positive ratio and true positive ratio when the confidence threshold for classification is varied.
+ These curves help understand how well the model is likely to perform in real life.
+
+\input{sound/summary_tables.tex}
+\input{sound/roc_figures.tex}
+

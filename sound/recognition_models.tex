@@ -1,0 +1,150 @@
+
+\section{Keyphrase Recognition from Obfuscated Audio}
+\label{sec:recognition_models}
+
+I propose a deep neural network architecture (Figure \ref{fig:convnet_architecture}) to achieve this keyphrase recognition task in real time.
+ Research work from Google in the past \cite{smallfootprintkeywordspotting} \cite{cnnkeywordspotting} \cite{chen2015locallyconnected} \cite{chen2014low} have shown that deep convolutional neural networks are suitable for online keyphrase recognition in mobile devices.
+ The focus of my work is to survey the trade-off between privacy and keyphrase recognition performance for different audio obfuscation techniques.
+ Based on the work from Google, I add the remark that efficient implementations of such architectures have been realized for mobile devices and it will be possible to translate the architecture I propose in a similar fashion, to mobile devices to realize the recommendations in Section \ref{sec:proposed_changes_to_mobile}.
+
+The different layers of the deep convolutional neural network are described in detail below.
+
+\subsection{Input Layer}
+
+This contains all the samples from the obfuscated audio for a 2.048 second interval, with the audio being sampled at 16 kHz with 16-bit resolution.
+ The interval of 2.048 seconds was chosen so that the corresponding number of raw audio samples is a power of 2 (32768 raw audio samples).
+ This choice is purely one of convenience for signal processing.
+
+
+Based on the obfuscation technique applied, the total number of samples provided in the input layer may be different.
+ Some examples for this are shown in Table \ref{tab:input_layer_samples}.
+ However, all of these variants still correspond to a time interval of 2.048 seconds, assisting in the consistency of the deep convolutional neural network across different obfuscation techniques.
+
+
+For the sake of clarity when working with convolutional layers, the shape of the input layer can be re-written in the following manner.
+
+\begin{gather}
+\text{Shape Template} = (\text{height} \times \text{width} \times \text{channels}) \\
+\text{Shape of Input Layer} = (N \times 1 \times 1)
+\end{gather}
+
+\begin{table}[!th]
+\centering
+\begin{tabularx}{\textwidth}{l | l}
+\textbf{Obfuscation Technique} & \textbf{Input Layer Size} \\
+\hline
+No Obfuscation (Raw Audio) & 32768 \\
+Decimation to 4 kHz & 8192 \\
+Decimation to 1 kHz with 8-Hamming Reduction & 1024 \\
+Decimation to 1 kHz & 2048 \\
+Decimation to 1 kHz with 2-Hamming Reduction & 1024 \\
+Bit Depth to 1 bit & 32768 \\
+Bit Depth to 1 bit with 8-Hamming Reduction & 4096 \\
+\end{tabularx}
+\caption{Example list of size of input layer in the Deep Convolutional Neural Network for various obfuscation techniques}
+\label{tab:input_layer_samples}
+\end{table}
+
+\subsection{Convolutional Layers}
+
+In this case, I propose using 3 cascaded convolutional layers (interspersed with 3 max-pooling layers) to learn audio features for the classification task.
+ Since the "width" (from the shape template above) is always 1, these layers can also be likened to a 1-D convolutional operation.
+ Each convolutional layer is completely defined by the parameters described below. \footnote{Chris Olah's explanation in \cite{cnn_modular} is a great resource to understand the structure of ConvNets.}
+
+\begin{itemize}
+\item \textbf{Filter Size $(S)$:} The size of the convolutional filter defines the number of samples to work with to generate a feature.
+ This also decides the size of the weight matrix for a single convolutional filter.
+ For example, if only one filter of size $(20 \times 1 \times 1)$ is present, the filter works with 20 audio samples and 1 channel
+ In other words, 20 weight variables are learnt per filter.
+ The filter width is always 1, since this is a 1-D signal, and typically the filter works with all the channels of the input.
+ Consequently, the filter size $S$ can be defined by a single number, 20, in this case.
+
+\item \textbf{Filter Strides $(P)$:} The term "convolution" applies here because of the striding operation.
+ Once the size of the convolutional filter is decided, the filter walks over sub-sections of the input space to compute a feature for different parts of the input.
+ This can be likened to computing the Fourier Transform of different portions of a signal to understand localized frequency distributions --- the convolutional filter learns to find the best localized features.
+ Clearly, given the high sample frequency of audio signals, striding the filter sample by sample would result in excessive computational time.
+ Moreover, striding sample by sample is not likely to provide accuracy benefits either --- owing to the high sample frequency, the information (or phoneme) content is dispersed.
+ The Filter Strides $P$ is the number of samples the filter "walks" over before computing the next feature.
+
+
+Decreasing this parameter results in the filter striding in shorter steps (more instances of the same filter), increasing computation time while learning and evaluating.
+ The size of the model (in terms of memory), however, remains unchanged.
+
+\item \textbf{Number of Filters $(K)$:} This is used to set the number of filters (different features) to learn from the input.
+ This can be likened to computing different types of transforms (e.g. fourier, haar, daubechies, cepstral etc.) over the same sub-sections of the input data.
+ The intuition behind this is that different filters are likely to capture the essential features of the signal when used together.
+
+\item \textbf{Activation Function:} This is the activation function used to generate the output at each node.
+ Typical choices are ReLU, Sigmoid, tanh etc.
+
+\end{itemize}
+
+The size of the output of the 1-D convolutional filter is described below.
+ The structure of my proposed deep convolutional neural network is described in \ref{tab:conv_layer_list}.
+
+\begin{gather}
+\text{Shape Template} = (\text{height} \times \text{width} \times \text{channels}) \\
+\text{Shape of Input Layer} = (N \times 1 \times C) \\
+\text{Shape of Output Layer} = \left(\frac{N-S+1}{P}, 1, K \right)
+\end{gather}
+
+The max-pooling layers are equivalent to a subsampling operation.
+ They are introduced to maintain local translational invariance in the model.
+ Consequently, a max-pooling operation of 4 decreases the number of input samples by a factor of $\left(\frac{1}{4}\right)$ in the output.
+ The number 4 here is referred to as the "kernel size" of the max-pooling layer.
+ It is standard practice for a max-pooling layer to follow a convolutional layer.
+ \footnote{The Convolutional Layer together with its Max-Pooling Layer will be referred to as Conv-Max layer in the rest of this thesis.}
+ All the max-pooling layers used in the architecture in Figure \ref{fig:convnet_architecture} have kernel size 2.
+
+\begin{table}[!th]
+\centering
+\def\arraystretch{2}\tabcolsep=10pt
+
+\begin{subtable}{\textwidth}
+\centering
+\begin{tabular}{l | l | l}
+\textbf{Parameter} & \textbf{Convolutional Layer: 1} & \textbf{Convolutional Layer: 2} \\
+\hline
+Filter Size & $S = \frac{N}{128} \sim 16 ms$ & $S = 2 \sim 32 ms$ \\
+Filter Strides & $P = \frac{S}{2} = \frac{N}{256}$ & $P = \frac{S}{2} = 1$ \\
+Number of Filters & 1024 & 512 \\
+Activation Function & ReLU & ReLU \\
+Regularization & $L_2$ & $L_2$ \\
+\end{tabular}
+\end{subtable}
+
+\vspace{3cm}
+
+\begin{subtable}{\textwidth}
+\centering
+\begin{tabular}{l | l}
+\textbf{Parameter} & \textbf{Convolutional Layer: 3} \\
+\hline
+Filter Size & $S = 8 \sim 256 ms$ \\
+Filter Strides & $P = \frac{S}{2} = 4$ \\
+Number of Filters & 128 \\
+Activation Function & ReLU \\
+Regularization & $L_2$ \\
+\end{tabular}
+\end{subtable}
+
+\caption{Description of filter size for the Deep Convolutional Neural Network Architecture in Figure \ref{fig:convnet_architecture}. The input layer has $N$ samples.}
+\label{tab:conv_layer_list}
+\end{table}
+
+\subsection{Densely Connected Layers}
+
+The cascaded convolutional layers are used to learn the "best" features for the classification task at hand.
+ The densely connected layers are intended to learn the actual classification task from the "best" features.
+ If the output of the cascaded convolutional layers are considered as "features", then the rest of the network is a two-layer perceptron.
+ In other words, the rest of the network can be treated as a neural network with one hidden layer and one output layer.
+
+The hidden layer has ReLU activation with dropout regularization (the dropout probability is chosen as 0.8).
+ The output layer has a softmax activation function to compute class probabilities.
+
+
+When the neural network is fine-tuned online by the dbHound system, only the weights for the densely connected layers (two-layer perceptron) are updated.
+ The reason only the two-layer perceptron is fine-tuned is to prevent overfitting on new data --- using this approach, the feature computation is "frozen" and the classification boundary is \textbf{slightly} nudged to accommodate new examples.
+ This "incremental" learning is also done with a very small learning rate with the idea that the classifier is already well learnt and only needs to be slightly adapted to deal with new data.
+
+\input{sound/convnet_model.tikz}
