@@ -1,39 +1,54 @@
 \chapter{Conclusions and Future Directions}
-
+\label{chap:conclusion}
 
 \section{Conclusion}
 
+In this thesis, I illustrate applications of ideas from Machine Learning research in three different areas: edge computing systems, wireless systems research and mobile systems research.
+ In all three avenues, there is tremendous scope to define new problems that can be tackled by Machine Learning drive by the volume of data-driven analyses already occurring in practice.
 
+
+In case of water hardness detection, the machine learning algorithms are already deployed in real systems by virtue of the Madison based startup Emonix Inc \footnote{The company can be found online at \url{https://www.emonix.io}.}.
+
+
+In case of wireless spectrum estimation, this is an actively research unsolved problem with tremendous promise.
+ In my work, I describe the trappings of an initial solution using matrix completion.
+ However, there are several ideas to improve the currently achieved performance, as described in Section \ref{sec:futureWork}.
+
+
+In case of privacy preserving keyphrase recognition, to the best of my knowledge, this is the first line of work that examines keyphrase recognition using lightweight audio obfuscation techniques.
+ I hope to carry my initial results here in building a privacy-preserving keyphrase recognition service that can be deployed in mobile systems with minimal effort.
 
 \section{Directions for Future Work}
-
+\label{sec:futureWork}
 
 \subsection{Water Hardness Detection}
 
 \subsubsection{Characterizing transient water usage patterns}
 
+One shortcoming of the existing water flow forecasting approach is that it is unable to predict the instantaneous flow because of the high-order dynamics associated with the signal.
+ Recent research suggests moderately complex LSTMs (Long-Short Term Memory Networks) are able to learn compact representations of high-order dynamics.
+ This may be an interesting avenue to explore in future work.
+
 \subsubsection{Collective water quality characterization}
 
-Use neighboring installations in an area to gather collective information.
-
-
+With real systems being deployed in improving water softener efficiency, it could be valuable to provide recommendations to the local water authority to improve water quality and resource utility.
+ Using data collected from neighboring installations of the Emonix system, it would be possible to build a database of water quality and usage history with geographic tags.
+ This can be used by the local water authority for understanding drawbacks, if any, in the water distribution infrastructure as well as notify consumers of excessive water usage patterns.
 
 
 \subsection{Wireless Spectrum Estimation}
 
 \subsubsection{Incorporating physical propagation models}
 
-\subsubsection{Spectrum Usage Modeling and Forecasting}
-
-
+One of the drawbacks of the estimation method proposed in this thesis is the 5dBm estimation error.
+ It would be interesting to consider using wireless propagation models along with geographically diverse data (as opposed to using data only from a single location as described in Chapter \ref{chap:spectrum}).
+ This would be equivalent to a regularization technique that leverages physical models and allows for more data to factor into the estimation.
 
 
 \subsection{Privacy-sensitive Acoustic Perception}
 
 \subsubsection{Theoretical Analysis based on Differential Privacy}
 
-\subsubsection{System to add new keywords}
-
-\subsubsection{Enhancements to online learning}
-
-Also minimizing training time and effort.
+The results from the dbHound system presented in Chapter \ref{chap:sound} discuss empirical evaluation of keyphrase recognition from obfuscated audio.
+ However, for strong guarantees on privacy and security, it is important to analyze the obfuscation techniques using the lens of differential privacy.
+ Such an analysis would help to quantify the degree of privacy and security improvements in the context of the threat models described in Section \ref{sec:threat_model}.

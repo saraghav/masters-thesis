@@ -1,7 +1,22 @@
 \chapter{Privacy-sensitive Acoustic Perception for Mobile Devices}
+\label{chap:sound}
 
 \section{Introduction}
 
+Speech enabled technology is an increasingly popular element in consumer devices, as seen in Smartphones, Home Assistants etc.
+ To provide speech enabled features, devices rely on listening to the ambient raw audio stream for keyword spotting.
+ Applications listening to raw audio pose serious questions about conversational privacy and personal security for the end-user \cite{alwaysListening}.
+ As an attempt to protect privacy, the speech enabled features have been restricted only to "native" applications written by the device manufacturer.
+
+
+In this chapter, I present a solution to this problem in two phases.
+ I discuss audio obfuscation techniques and examine the trade-off between privacy and keyword spotting performance.
+ I also identify the best solution within our framework that maximizes both privacy and keyword spotting performance.
+ I present performance results in the field from an Android application (\texttt{dBHound Keyphrase}).
+ I also support my argument with human level cognition performance on obfuscated audio.
+ Using this approach allows the entire suite of applications on a consumer device to provide keyword-enabled services while maintaining user privacy.
+ This is achieved by openly broadcasting the obfuscated audio to the applications on the device.
+ Since most user interaction with applications can be decomposed into keywords, I envision that this approach will lead to comprehensive speech-enabled services while maximizing end-user conversational privacy.
 
 
 \input{sound/threat_model.tex}
@@ -17,9 +32,19 @@
 \section{Proposed changes to Mobile Keyphrase Recognition}
 \label{sec:proposed_changes_to_mobile}
 
+Using the obfuscated audio technique proposed by the results from the dbHound experimental evaluation, I propose that the Android sensor hub applies the obfuscation to microphone audio and broadcasts it to the applications on the device that wish to provide a voice command interface.
+ This model is illustrated in Figure \ref{fig:proposed_voice_command_arch}.
+ This way, applications such as browsers wishing to provide simple voice commands (such as "go back", "open new tab" etc.) will not infringe upon the privacy of the user.
 
-
+\input{sound/proposed_audio_arch.tikz}
 
 
 \section{Conclusion}
 
+
+In this chapter, I present the dbHound system in detail and discuss lightweight obfuscation techniques that can be implemented on mobile devices.
+ Based on the experimental data, the most promising obfuscation technique is \texttt{precision\_1\_hamming\_16}.
+ In other words, reducing the audio to 1-bit precision and applying the hamming reduce operation over 16 consecutive samples shows the best trade-off between privacy and keyphrase recognition performance.
+
+
+I envision that such voice-recognition models based on obfuscated audio will provide the solution to maintaining user privacy while improving the accessibility of technology for the physically challenged, as well as providing users with an improved way of interfacing with technology.

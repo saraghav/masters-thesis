@@ -1,0 +1,63 @@
+\begin{figure}[!t]
+\centering
+\tikzset{%
+    cascaded/.style={%
+        general shadow={%
+            shadow scale=1,
+            shadow xshift=-1ex,
+            shadow yshift=1ex,
+            draw,
+            thick,
+            fill=white
+        },
+        general shadow={%
+            shadow scale=1,
+            shadow xshift=-.5ex,
+            shadow yshift=.5ex,
+            draw,
+            thick,
+            fill=white
+        },
+        fill=white,
+        draw,
+        thick,
+        minimum width=1.5cm,
+        minimum height=2cm
+    }
+}
+
+\tikzstyle{vecArrowShort}=[thick,
+                      shorten >= 5.5pt,
+                      postaction={draw,line width=2pt, black, shorten >= 4.5pt}
+]
+\tikzstyle{vecArrow}=[thick,
+                      postaction={draw,line width=2pt, black}
+]
+
+\tikzstyle{shortline} = [draw, -latex', fill=black, vecArrowShort]
+\tikzstyle{line} = [draw, -latex', fill=black, vecArrow]
+\tikzstyle{shortline2} = [draw, dotted, -latex', fill=black, vecArrowShort]
+\tikzstyle{line2} = [draw, dotted, -latex', fill=black, vecArrow]
+
+\tikzstyle{input} = [rectangle, draw, fill=green!20, text centered, sharp corners, minimum height=2em, minimum width=15em, align=center]
+\tikzstyle{oper} = [rectangle, draw, fill=blue!20, text centered, rounded corners, minimum height=4em, minimum width=10em]
+\tikzstyle{output} = [draw, ellipse,fill=red!20, minimum height=2em]
+
+\begin{tikzpicture}[node distance = 2cm, auto]
+
+% nodes
+\node [input] (input) { $\text{Microphone}$ };
+\node [oper, below of=input] (sensorhub) { $\text{Sensor Hub: Obfuscate Audio}$ };
+\node [oper, right of=sensorhub, node distance = 8cm] (dbhound) { $\text{dbHound App}$ };
+\node [cascaded, output, below of=sensorhub] (apps) { $\text{Client Applications}$ };
+
+%arrows
+\path [line] (input) -- (sensorhub);
+\path [line2] (input) -- (dbhound);
+\path [shortline] (sensorhub) -- (apps);
+\path [shortline2] (dbhound) -- (apps);
+
+\end{tikzpicture}
+\caption{Proposed Voice Command Model for Mobile Systems showing dbHound equivalent in parallel}
+\label{fig:proposed_voice_command_arch}
+\end{figure}
