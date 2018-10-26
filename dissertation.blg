@@ -1,0 +1,79 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: dissertation.aux
+A level-1 auxiliary file: frontmatter/frontmatter.aux
+A level-1 auxiliary file: intro/intro.aux
+A level-1 auxiliary file: water/water.aux
+A level-1 auxiliary file: spectrum/spectrum.aux
+A level-1 auxiliary file: sound/sound.aux
+A level-1 auxiliary file: conclusion/conclusion.aux
+The style file: mcbride.bst
+Database file #1: refs/refs.bib.bib
+Database file #2: refs/hotmobile17refs.bib.bib
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Warning--to sort, need author or key in WhatIsWaterHardness
+Warning--to sort, need author or key in SoftenedWaterBenefitsStudy
+Warning--to sort, need author or key in GoogleSpectrumDatabase
+Warning--to sort, need author or key in SpectrumBridge
+Warning--to sort, need author or key in MicrosoftWhitespaces
+Warning--to sort, need author or key in CTIA
+Warning--to sort, need author or key in alwaysListening
+Warning--to sort, need author or key in AndroidSensorHub
+Warning--to sort, need author or key in NutsAndBoltsOfDL
+Warning--to sort, need author or key in mturk
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Warning--empty year in alwaysListening
+Warning--empty year in mturk
+Warning--empty year in AndroidSensorHub
+Warning--empty year in CTIA
+Warning--empty year in WhatIsWaterHardness
+Warning--empty year in GoogleSpectrumDatabase
+Warning--empty year in MicrosoftWhitespaces
+Warning--empty year in NutsAndBoltsOfDL
+Warning--empty year in SoftenedWaterBenefitsStudy
+Warning--empty year in SpectrumBridge
+Warning--empty year in NSFSoftener
+Warning--empty year in cnn_modular
+Warning--missing publisher in Cyclades
+You've used 40 entries,
+            3317 wiz_defined-function locations,
+            915 strings with 13486 characters,
+and the built_in function-call counts, 27849 in all, are:
+= -- 1974
+> -- 982
+< -- 79
++ -- 345
+- -- 299
+* -- 3492
+:= -- 3570
+add.period$ -- 170
+call.type$ -- 40
+change.case$ -- 393
+chr.to.int$ -- 40
+cite$ -- 83
+duplicate$ -- 2235
+empty$ -- 2227
+format.name$ -- 554
+if$ -- 5329
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 331
+newline$ -- 228
+num.names$ -- 121
+pop$ -- 489
+preamble$ -- 1
+purify$ -- 258
+quote$ -- 0
+skip$ -- 714
+stack$ -- 0
+substring$ -- 980
+swap$ -- 1792
+text.length$ -- 68
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 357
+warning$ -- 23
+while$ -- 138
+width$ -- 0
+write$ -- 535
+(There were 23 warnings)

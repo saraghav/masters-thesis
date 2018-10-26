@@ -1,0 +1,419 @@
+\begin{wb-bib}{40}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\expandafter\ifx\csname bibnamefont\endcsname\relax
+  \def\bibnamefont#1{#1}\fi
+\expandafter\ifx\csname bibfnamefont\endcsname\relax
+  \def\bibfnamefont#1{#1}\fi
+\expandafter\ifx\csname citenamefont\endcsname\relax
+  \def\citenamefont#1{#1}\fi
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\providecommand{\bibinfo}[2]{#2}
+\providecommand{\eprint}[2][]{\url{#2}}
+
+\bibitem[{alw()}]{alwaysListening}
+
+\newblock \bibinfo{title}{Alexa and google home record what you say. {B}ut what
+  happens to the data?}
+\newblock
+  \bibinfo{howpublished}{\url{https://www.wired.com/2016/12/alexa-and-google-record-your-voice/}}.
+\newblock \bibinfo{note}{Accessed: 01-15-2017}.
+
+\bibitem[{mtu()}]{mturk}
+
+\newblock \bibinfo{title}{Amazon mechanical turk}.
+\newblock \bibinfo{howpublished}{\url{https://www.mturk.com/mturk/welcome}}.
+\newblock \bibinfo{note}{Accessed: 01-15-2017}.
+
+\bibitem[{And()}]{AndroidSensorHub}
+
+\newblock \bibinfo{title}{Android sensor hub}.
+\newblock
+  \bibinfo{howpublished}{\url{https://source.android.com/devices/sensors/sensor-stack.html}}.
+\newblock \bibinfo{note}{Accessed: 01-15-2017}.
+
+\bibitem[{CTI()}]{CTIA}
+
+\newblock \bibinfo{title}{Cellular {T}elecommunications and {I}nternet
+  {A}ssocition}.
+\newblock
+  \bibinfo{howpublished}{\url{http://www.ctia.org/about-us/current-members}}.
+\newblock \bibinfo{note}{Accessed: 2016-10-17}.
+
+\bibitem[{Wha()}]{WhatIsWaterHardness}
+
+\newblock \bibinfo{title}{Explanation of water hardness}.
+\newblock
+  \bibinfo{howpublished}{\url{https://www.fcwa.org/water/hardness.htm}}.
+\newblock \bibinfo{note}{Accessed: 01-11-2017}.
+
+\bibitem[{Goo()}]{GoogleSpectrumDatabase}
+
+\newblock \bibinfo{title}{Google {S}pectrum {D}atabase}.
+\newblock
+  \bibinfo{howpublished}{\url{https://www.google.com/get/spectrumdatabase/}}.
+\newblock \bibinfo{note}{Accessed: 2016-10-18}.
+
+\bibitem[{Mic()}]{MicrosoftWhitespaces}
+
+\newblock \bibinfo{title}{Microsoft {W}hitespaces {D}atabase}.
+\newblock
+  \bibinfo{howpublished}{\url{http://whitespaces.microsoftspectrum.com/}}.
+\newblock \bibinfo{note}{Accessed: 2016-10-18}.
+
+\bibitem[{Nut()}]{NutsAndBoltsOfDL}
+
+\newblock \bibinfo{title}{Nuts and bolts of applying deep learning}.
+\newblock
+  \bibinfo{howpublished}{\url{https://kevinzakka.github.io/2016/09/26/applying-deep-learning/}}.
+\newblock \bibinfo{note}{Accessed: 01-15-2017}.
+
+\bibitem[{Sof()}]{SoftenedWaterBenefitsStudy}
+
+\newblock \bibinfo{title}{Softened water: {B}enefits {S}tudy}.
+\newblock
+  \bibinfo{howpublished}{\url{http://www.wqa.org/Portals/0/WQRF/ResearchStudy_BenefitsOfSoftenedWater_ExecSummary.pdf}}.
+\newblock \bibinfo{note}{Accessed: 01-11-2017}.
+
+\bibitem[{Spe()}]{SpectrumBridge}
+
+\newblock \bibinfo{title}{Spectrum {B}ridge {W}hitespace {D}atabase}.
+\newblock
+  \bibinfo{howpublished}{\url{http://whitespaces.spectrumbridge.com/Main.aspx}}.
+\newblock \bibinfo{note}{Accessed: 2016-10-18}.
+
+\bibitem[{\citenamefont{Cai et~al.}(2010)\citenamefont{Cai, Candès, and
+  Shen}}]{SVThresholding}
+\bibinfo{author}{\bibnamefont{Cai}, \bibfnamefont{Jian-Feng}},
+  \bibinfo{author}{\bibfnamefont{Emmanuel~J.} \bibnamefont{Candès}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{Zuowei} \bibnamefont{Shen}}.
+  \bibinfo{year}{2010}.
+\newblock \bibinfo{title}{A singular value thresholding algorithm for matrix
+  completion}.
+\newblock \emph{\bibinfo{journal}{SIAM Journal on Optimization}}
+  \bibinfo{volume}{20}(\bibinfo{number}{4}):\penalty0
+  \bibinfo{pages}{1956--1982}.
+\newblock \eprint{http://dx.doi.org/10.1137/080738970}.
+
+\bibitem[{\citenamefont{Cand{\`e}s and Recht}(2009)}]{CandesRecht}
+\bibinfo{author}{\bibnamefont{Cand{\`e}s}, \bibfnamefont{Emmanuel~J.}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{Benjamin}
+  \bibnamefont{Recht}}. \bibinfo{year}{2009}.
+\newblock \bibinfo{title}{Exact matrix completion via convex optimization}.
+\newblock \emph{\bibinfo{journal}{Foundations of Computational Mathematics}}
+  \bibinfo{volume}{9}(\bibinfo{number}{6}):\penalty0 \bibinfo{pages}{717}.
+
+\bibitem[{\citenamefont{Chen}(2014)}]{chen2014low}
+\bibinfo{author}{\bibnamefont{Chen}, \bibfnamefont{Guoguo}}.
+  \bibinfo{year}{2014}.
+\newblock \bibinfo{title}{Low resource keyword spotting}.
+\newblock \emph{\bibinfo{journal}{Department of Electrical and Computer
+  Engineering Johns Hopkins University Baltimore, Maryland}}.
+
+\bibitem[{\citenamefont{Chen et~al.}(2014)\citenamefont{Chen, Parada, and
+  Heigold}}]{smallfootprintkeywordspotting}
+\bibinfo{author}{\bibnamefont{Chen}, \bibfnamefont{Guoguo}},
+  \bibinfo{author}{\bibfnamefont{Carolina} \bibnamefont{Parada}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{Georg}
+  \bibnamefont{Heigold}}. \bibinfo{year}{2014}.
+\newblock \bibinfo{title}{Small-footprint keyword spotting using deep neural
+  networks}.
+\newblock In \emph{\bibinfo{booktitle}{2014 ieee international conference on
+  acoustics, speech and signal processing (icassp)}},
+  \bibinfo{pages}{4087--4091}. \bibinfo{organization}{IEEE}.
+
+\bibitem[{\citenamefont{Chen et~al.}(2015)\citenamefont{Chen, Lopez-Moreno,
+  Sainath, Visontai, Alvarez, and Parada}}]{chen2015locallyconnected}
+\bibinfo{author}{\bibnamefont{Chen}, \bibfnamefont{Yu-hsin}},
+  \bibinfo{author}{\bibfnamefont{Ignacio} \bibnamefont{Lopez-Moreno}},
+  \bibinfo{author}{\bibfnamefont{T}~\bibnamefont{Sainath}},
+  \bibinfo{author}{\bibfnamefont{Mirk{\'o}} \bibnamefont{Visontai}},
+  \bibinfo{author}{\bibfnamefont{Raziel} \bibnamefont{Alvarez}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{Carolina}
+  \bibnamefont{Parada}}. \bibinfo{year}{2015}.
+\newblock \bibinfo{title}{Locallyconnected and convolutional neural networks
+  for small footprint speaker recognition}.
+\newblock \emph{\bibinfo{journal}{Interspeech, Dresden, Germany}}.
+
+\bibitem[{\citenamefont{Dhoutaut et~al.}(2006)\citenamefont{Dhoutaut,
+  R{\'e}gis, and Spies}}]{RFModelsCity2}
+\bibinfo{author}{\bibnamefont{Dhoutaut}, \bibfnamefont{Dominique}},
+  \bibinfo{author}{\bibfnamefont{Anthony} \bibnamefont{R{\'e}gis}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{Fran\c{c}ois}
+  \bibnamefont{Spies}}. \bibinfo{year}{2006}.
+\newblock \bibinfo{title}{Integration of physical phenomena into an
+  experiment-based propagation model}.
+\newblock In \emph{\bibinfo{booktitle}{Proceedings of the 3rd acm international
+  workshop on performance evaluation of wireless ad hoc, sensor and ubiquitous
+  networks}}, \bibinfo{pages}{98--105}. PE-WASUN '06, \bibinfo{address}{New
+  York, NY, USA}:\@ \bibinfo{publisher}{ACM}.
+
+\bibitem[{\citenamefont{Foundation}()}]{NSFSoftener}
+\bibinfo{author}{\bibnamefont{Foundation}, \bibfnamefont{National~Science}}.
+\newblock \bibinfo{title}{Today's water softeners}.
+\newblock
+  \bibinfo{howpublished}{\url{http://standards.nsf.org/apps/group_public/download.php/9248/Softener\%20Facts\%204-2010\%5B1\%5D.pdf}}.
+\newblock \bibinfo{note}{Accessed: 01-13-2017}.
+
+\bibitem[{\citenamefont{Green et~al.}(2016)\citenamefont{Green, Yun, and
+  Iskander}}]{RFModelsCity1}
+\bibinfo{author}{\bibnamefont{Green}, \bibfnamefont{D.}},
+  \bibinfo{author}{\bibfnamefont{Z.}~\bibnamefont{Yun}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{M.~F.} \bibnamefont{Iskander}}.
+  \bibinfo{year}{2016}.
+\newblock \bibinfo{title}{Propagation characteristics in urban environments}.
+\newblock In \emph{\bibinfo{booktitle}{2016 ieee/aces international conference
+  on wireless information technology and systems (icwits) and applied
+  computational electromagnetics (aces)}}, \bibinfo{pages}{1--2}.
+
+\bibitem[{\citenamefont{Harrold et~al.}(2011)\citenamefont{Harrold, Cepeda, and
+  Beach}}]{SpectrumDynamics}
+\bibinfo{author}{\bibnamefont{Harrold}, \bibfnamefont{T.}},
+  \bibinfo{author}{\bibfnamefont{R.}~\bibnamefont{Cepeda}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Beach}}.
+  \bibinfo{year}{2011}.
+\newblock \bibinfo{title}{Long-term measurements of spectrum occupancy
+  characteristics}.
+\newblock In \emph{\bibinfo{booktitle}{New frontiers in dynamic spectrum access
+  networks (dyspan), 2011 ieee symposium on}}, \bibinfo{pages}{83--89}.
+
+\bibitem[{\citenamefont{Klingensmith et~al.}(2015)\citenamefont{Klingensmith,
+  Sridhar, LaVallee, and Banerjee}}]{AWESOME}
+\bibinfo{author}{\bibnamefont{Klingensmith}, \bibfnamefont{Neil}},
+  \bibinfo{author}{\bibfnamefont{Anantharaghavan} \bibnamefont{Sridhar}},
+  \bibinfo{author}{\bibfnamefont{Zachary} \bibnamefont{LaVallee}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{Suman}
+  \bibnamefont{Banerjee}}. \bibinfo{year}{2015}.
+\newblock \bibinfo{title}{Water or slime?: A platform for automating water
+  treatment systems}.
+\newblock In \emph{\bibinfo{booktitle}{Proceedings of the 2nd acm international
+  conference on embedded systems for energy-efficient built environments}},
+  \bibinfo{pages}{75--84}. BuildSys '15, \bibinfo{address}{New York, NY,
+  USA}:\@ \bibinfo{publisher}{ACM}.
+
+\bibitem[{\citenamefont{Kumar et~al.}(2013)\citenamefont{Kumar, Rakheja,
+  Sarswat, Varshney, Bhatia, Goli, Ribeiro, and Sharma}}]{SpectrumIndia}
+\bibinfo{author}{\bibnamefont{Kumar}, \bibfnamefont{P.}},
+  \bibinfo{author}{\bibfnamefont{N.}~\bibnamefont{Rakheja}},
+  \bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{Sarswat}},
+  \bibinfo{author}{\bibfnamefont{H.}~\bibnamefont{Varshney}},
+  \bibinfo{author}{\bibfnamefont{P.}~\bibnamefont{Bhatia}},
+  \bibinfo{author}{\bibfnamefont{S.~R.} \bibnamefont{Goli}},
+  \bibinfo{author}{\bibfnamefont{V.~J.} \bibnamefont{Ribeiro}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Sharma}}.
+  \bibinfo{year}{2013}.
+\newblock \bibinfo{title}{White space detection and spectrum characterization
+  in urban and rural india}.
+\newblock In \emph{\bibinfo{booktitle}{World of wireless, mobile and multimedia
+  networks (wowmom), 2013 ieee 14th international symposium and workshops on
+  a}}, \bibinfo{pages}{1--6}.
+
+\bibitem[{\citenamefont{McHenry et~al.}(2006)\citenamefont{McHenry, Tenhula,
+  McCloskey, Roberson, and Hood}}]{ChicagoSpectrum}
+\bibinfo{author}{\bibnamefont{McHenry}, \bibfnamefont{Mark~A.}},
+  \bibinfo{author}{\bibfnamefont{Peter~A.} \bibnamefont{Tenhula}},
+  \bibinfo{author}{\bibfnamefont{Dan} \bibnamefont{McCloskey}},
+  \bibinfo{author}{\bibfnamefont{Dennis~A.} \bibnamefont{Roberson}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{Cynthia~S.}
+  \bibnamefont{Hood}}. \bibinfo{year}{2006}.
+\newblock \bibinfo{title}{Chicago spectrum occupancy measurements \& analysis
+  and a long-term studies proposal}.
+\newblock In \emph{\bibinfo{booktitle}{Proceedings of the first international
+  workshop on technology and policy for accessing spectrum}}. TAPAS '06,
+  \bibinfo{address}{New York, NY, USA}:\@ \bibinfo{publisher}{ACM}.
+
+\bibitem[{\citenamefont{Misra et~al.}(2016)\citenamefont{Misra, Gudipati, and
+  Katti}}]{QuickC}
+\bibinfo{author}{\bibnamefont{Misra}, \bibfnamefont{Rakesh}},
+  \bibinfo{author}{\bibfnamefont{Aditya} \bibnamefont{Gudipati}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{Sachin}
+  \bibnamefont{Katti}}. \bibinfo{year}{2016}.
+\newblock \bibinfo{title}{Quickc: Practical sub-millisecond transport for small
+  cells}.
+\newblock In \emph{\bibinfo{booktitle}{Proceedings of the 22nd annual
+  international conference on mobile computing and networking}},
+  \bibinfo{pages}{109--121}. MobiCom '16, \bibinfo{address}{New York, NY,
+  USA}:\@ \bibinfo{publisher}{ACM}.
+
+\bibitem[{\citenamefont{Momeni et~al.}(2014)\citenamefont{Momeni, Gharedaghi,
+  Amin, Poursafa, and Mansourian}}]{WaterHardnessOnCardiovascularDisease}
+\bibinfo{author}{\bibnamefont{Momeni}, \bibfnamefont{M.}},
+  \bibinfo{author}{\bibfnamefont{Z.}~\bibnamefont{Gharedaghi}},
+  \bibinfo{author}{\bibfnamefont{M.~M.} \bibnamefont{Amin}},
+  \bibinfo{author}{\bibfnamefont{P.}~\bibnamefont{Poursafa}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Mansourian}}.
+  \bibinfo{year}{2014}.
+\newblock \bibinfo{title}{{{D}oes water hardness have preventive effect on
+  cardiovascular disease?}}
+\newblock \emph{\bibinfo{journal}{Int J Prev Med}}
+  \bibinfo{volume}{5}(\bibinfo{number}{2}):\penalty0 \bibinfo{pages}{159--163}.
+
+\bibitem[{\citenamefont{Olah}()}]{cnn_modular}
+\bibinfo{author}{\bibnamefont{Olah}, \bibfnamefont{Chris}}.
+\newblock \bibinfo{title}{{C}onv {N}ets: A modular perspective}.
+\newblock
+  \bibinfo{howpublished}{\url{http://colah.github.io/posts/2014-07-Conv-Nets-Modular/}}.
+\newblock \bibinfo{note}{Accessed: 01-14-2017}.
+
+\bibitem[{\citenamefont{Oppenheim and Schafer}(2010)}]{oppenheim2010discrete}
+\bibinfo{author}{\bibnamefont{Oppenheim}, \bibfnamefont{Alan~V}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{Ronald~W}
+  \bibnamefont{Schafer}}. \bibinfo{year}{2010}.
+\newblock \emph{\bibinfo{title}{Discrete-time signal processing}}.
+\newblock \bibinfo{publisher}{Pearson Higher Education}.
+
+\bibitem[{\citenamefont{Pan et~al.}(2016 (to appear))\citenamefont{Pan, Lam,
+  Tu, Papailliopoulos, Zhang, Jordan, Ramchandran, Re, and Recht}}]{Cyclades}
+\bibinfo{author}{\bibnamefont{Pan}, \bibfnamefont{Xinghao}},
+  \bibinfo{author}{\bibfnamefont{Maximillian} \bibnamefont{Lam}},
+  \bibinfo{author}{\bibfnamefont{Stephen} \bibnamefont{Tu}},
+  \bibinfo{author}{\bibfnamefont{Dimitris} \bibnamefont{Papailliopoulos}},
+  \bibinfo{author}{\bibfnamefont{Ce}~\bibnamefont{Zhang}},
+  \bibinfo{author}{\bibfnamefont{Michael} \bibnamefont{Jordan}},
+  \bibinfo{author}{\bibfnamefont{Kannan} \bibnamefont{Ramchandran}},
+  \bibinfo{author}{\bibfnamefont{Chris} \bibnamefont{Re}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{Benjamin} \bibnamefont{Recht}}.
+  \bibinfo{year}{2016 (to appear)}.
+\newblock \bibinfo{title}{{CYCLADES}: {C}onflict-free {A}synchronous {M}achine
+  {L}earning}.
+\newblock In \emph{\bibinfo{booktitle}{Advances in neural information
+  processing systems}}.
+
+\bibitem[{\citenamefont{Petrin and Steffes}(2004)}]{petrin2004measurement}
+\bibinfo{author}{\bibnamefont{Petrin}, \bibfnamefont{Allen}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{Paul~G} \bibnamefont{Steffes}}.
+  \bibinfo{year}{2004}.
+\newblock \bibinfo{title}{Measurement and analysis of urban spectrum usage}.
+\newblock In \emph{\bibinfo{booktitle}{Proc. of the 2004 international
+  symposium on advanced radio technologies ntia special publication
+  sp-04-409}}, \bibinfo{pages}{45--48}.
+
+\bibitem[{\citenamefont{Recht et~al.}(2011)\citenamefont{Recht, Re, Wright, and
+  Niu}}]{Hogwild}
+\bibinfo{author}{\bibnamefont{Recht}, \bibfnamefont{Benjamin}},
+  \bibinfo{author}{\bibfnamefont{Christopher} \bibnamefont{Re}},
+  \bibinfo{author}{\bibfnamefont{Stephen} \bibnamefont{Wright}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{Feng} \bibnamefont{Niu}}.
+  \bibinfo{year}{2011}.
+\newblock \bibinfo{title}{Hogwild: A lock-free approach to parallelizing
+  stochastic gradient descent}.
+\newblock In \emph{\bibinfo{booktitle}{Advances in neural information
+  processing systems 24}}, ed. \bibinfo{editor}{J.~Shawe-Taylor},
+  \bibinfo{editor}{R.~S. Zemel}, \bibinfo{editor}{P.~L. Bartlett},
+  \bibinfo{editor}{F.~Pereira}, and \bibinfo{editor}{K.~Q. Weinberger},
+  \bibinfo{pages}{693--701}. \bibinfo{publisher}{Curran Associates, Inc.}
+
+\bibitem[{\citenamefont{Roberson et~al.}(2006)\citenamefont{Roberson, Hood,
+  LoCicero, and MacDonald}}]{SpectrumForCogRadio1}
+\bibinfo{author}{\bibnamefont{Roberson}, \bibfnamefont{D.~A.}},
+  \bibinfo{author}{\bibfnamefont{C.~S.} \bibnamefont{Hood}},
+  \bibinfo{author}{\bibfnamefont{J.~L.} \bibnamefont{LoCicero}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{J.~T.}
+  \bibnamefont{MacDonald}}. \bibinfo{year}{2006}.
+\newblock \bibinfo{title}{Spectral occupancy and interference studies in
+  support of cognitive radio technology deployment}.
+\newblock In \emph{\bibinfo{booktitle}{Networking technologies for software
+  defined radio networks, 2006. sdr '06.1st ieee workshop on}},
+  \bibinfo{pages}{26--35}.
+
+\bibitem[{\citenamefont{Rousseau et~al.}(2014)\citenamefont{Rousseau,
+  Deléglise, and Estève}}]{TEDLIUMCorpus}
+\bibinfo{author}{\bibnamefont{Rousseau}, \bibfnamefont{Anthony}},
+  \bibinfo{author}{\bibfnamefont{Paul} \bibnamefont{Deléglise}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{Yannick}
+  \bibnamefont{Estève}}. \bibinfo{year}{2014}.
+\newblock \bibinfo{title}{Enhancing the ted-lium corpus with selected data for
+  language modeling and more ted talks}.
+\newblock In \emph{\bibinfo{booktitle}{In proc. lrec}},
+  \bibinfo{pages}{26--31}.
+
+\bibitem[{\citenamefont{Sainath and Parada}(2015)}]{cnnkeywordspotting}
+\bibinfo{author}{\bibnamefont{Sainath}, \bibfnamefont{T}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{Carolina} \bibnamefont{Parada}}.
+  \bibinfo{year}{2015}.
+\newblock \bibinfo{title}{Convolutional neural networks for small-footprint
+  keyword spotting}.
+\newblock In \emph{\bibinfo{booktitle}{Proc. interspeech}}.
+
+\bibitem[{\citenamefont{Sengupta}(2013)}]{PotentialHealthImpactsOfHardWater}
+\bibinfo{author}{\bibnamefont{Sengupta}, \bibfnamefont{P.}}
+  \bibinfo{year}{2013}.
+\newblock \bibinfo{title}{{{P}otential health impacts of hard water}}.
+\newblock \emph{\bibinfo{journal}{Int J Prev Med}}
+  \bibinfo{volume}{4}(\bibinfo{number}{8}):\penalty0 \bibinfo{pages}{866--875}.
+
+\bibitem[{\citenamefont{Taher et~al.}(2011)\citenamefont{Taher, Bacchus,
+  Zdunek, and Roberson}}]{ChicagoSpectrum2}
+\bibinfo{author}{\bibnamefont{Taher}, \bibfnamefont{T.~M.}},
+  \bibinfo{author}{\bibfnamefont{R.~B.} \bibnamefont{Bacchus}},
+  \bibinfo{author}{\bibfnamefont{K.~J.} \bibnamefont{Zdunek}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{D.~A.}
+  \bibnamefont{Roberson}}. \bibinfo{year}{2011}.
+\newblock \bibinfo{title}{Long-term spectral occupancy findings in chicago}.
+\newblock In \emph{\bibinfo{booktitle}{New frontiers in dynamic spectrum access
+  networks (dyspan), 2011 ieee symposium on}}, \bibinfo{pages}{100--107}.
+
+\bibitem[{\citenamefont{Wikipedia}(2016)}]{wiki:LTEBands}
+\bibinfo{author}{\bibnamefont{Wikipedia}}. \bibinfo{year}{2016}.
+\newblock \bibinfo{title}{Cellular frequencies in the {US} --- {W}ikipedia{,}
+  the free encyclopedia}.
+\newblock \bibinfo{note}{[Online; accessed 17-Oct-2016]}.
+
+\bibitem[{\citenamefont{Yin et~al.}(2012)\citenamefont{Yin, Chen, Zhang, Liu,
+  and Li}}]{SpectrumDataMining}
+\bibinfo{author}{\bibnamefont{Yin}, \bibfnamefont{S.}},
+  \bibinfo{author}{\bibfnamefont{D.}~\bibnamefont{Chen}},
+  \bibinfo{author}{\bibfnamefont{Q.}~\bibnamefont{Zhang}},
+  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Liu}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{Li}}. \bibinfo{year}{2012}.
+\newblock \bibinfo{title}{Mining spectrum usage data: A large-scale spectrum
+  measurement study}.
+\newblock \emph{\bibinfo{journal}{IEEE Transactions on Mobile Computing}}
+  \bibinfo{volume}{11}(\bibinfo{number}{6}):\penalty0
+  \bibinfo{pages}{1033--1046}.
+
+\bibitem[{\citenamefont{Zhang}(2016)}]{ZhangThesis}
+\bibinfo{author}{\bibnamefont{Zhang}, \bibfnamefont{Tan}}.
+  \bibinfo{year}{2016}.
+\newblock \bibinfo{title}{Building high-performance wireless systems through
+  dynamic spectrum access}.
+\newblock Ph.D. thesis, \bibinfo{school}{University of Wisconsin-Madison}.
+
+\bibitem[{\citenamefont{Zhang and Banerjee}(2013)}]{VScope}
+\bibinfo{author}{\bibnamefont{Zhang}, \bibfnamefont{Tan}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{Suman} \bibnamefont{Banerjee}}.
+  \bibinfo{year}{2013}.
+\newblock \bibinfo{title}{Inaccurate spectrum databases?: Public transit to its
+  rescue!}
+\newblock In \emph{\bibinfo{booktitle}{Proceedings of the twelfth acm workshop
+  on hot topics in networks}}, \bibinfo{pages}{6:1--6:7}. HotNets-XII,
+  \bibinfo{address}{New York, NY, USA}:\@ \bibinfo{publisher}{ACM}.
+
+\bibitem[{\citenamefont{Zhang et~al.}(2014)\citenamefont{Zhang, Leng, and
+  Banerjee}}]{VScope2}
+\bibinfo{author}{\bibnamefont{Zhang}, \bibfnamefont{Tan}},
+  \bibinfo{author}{\bibfnamefont{Ning} \bibnamefont{Leng}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{Suman} \bibnamefont{Banerjee}}.
+  \bibinfo{year}{2014}.
+\newblock \bibinfo{title}{A vehicle-based measurement framework for enhancing
+  whitespace spectrum databases}.
+\newblock In \emph{\bibinfo{booktitle}{Proceedings of the 20th annual
+  international conference on mobile computing and networking}},
+  \bibinfo{pages}{17--28}. MobiCom '14, \bibinfo{address}{New York, NY, USA}:\@
+  \bibinfo{publisher}{ACM}.
+
+\bibitem[{\citenamefont{Zhang et~al.}(2015)\citenamefont{Zhang, Patro, Leng,
+  and Banerjee}}]{WiSee}
+\bibinfo{author}{\bibnamefont{Zhang}, \bibfnamefont{Tan}},
+  \bibinfo{author}{\bibfnamefont{Ashish} \bibnamefont{Patro}},
+  \bibinfo{author}{\bibfnamefont{Ning} \bibnamefont{Leng}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{Suman} \bibnamefont{Banerjee}}.
+  \bibinfo{year}{2015}.
+\newblock \bibinfo{title}{A wireless spectrum analyzer in your pocket}.
+\newblock In \emph{\bibinfo{booktitle}{Proceedings of the 16th international
+  workshop on mobile computing systems and applications}},
+  \bibinfo{pages}{69--74}. HotMobile '15, \bibinfo{address}{New York, NY,
+  USA}:\@ \bibinfo{publisher}{ACM}.
+
+\end{wb-bib}
