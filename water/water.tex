@@ -161,7 +161,7 @@ The receiver operating curve (ROC) shown in Figure \ref{fig:roc} shows the trade
 
 \begin{figure}[t]
 \centering
-\includegraphics{water/hardnessresults.pdf}
+\includegraphics[width=\textwidth]{water/hardnessresults.png}
 \caption{The water hardness level of detection for five different training levels.}
 \label{fig:hardnessresults}
 \end{figure}
@@ -169,14 +169,14 @@ The receiver operating curve (ROC) shown in Figure \ref{fig:roc} shows the trade
 
 \begin{figure}[t]
 \centering
-\includegraphics{water/hardnessfalsepositives.pdf}
+\includegraphics[width=\textwidth]{water/hardnessfalsepositives.png}
 \caption{False positive rates for the water hardness detection learning algorithm, tested with five different training thresholds.}
 \label{fig:falsepositives}
 \end{figure}
 
 \begin{figure}[t]
 \centering
-\includegraphics{water/hardnessroc.pdf}
+\includegraphics[width=\textwidth]{water/hardnessroc.png}
 \caption{Receiver operating curve for the water hardness detection learning algorithm.}
 \label{fig:roc}
 \end{figure}
@@ -258,23 +258,30 @@ The dependence of hardness measurements on their own history and the flow is qua
 
 
 
-\begin{figure*}[!th]
-\centering
-\includegraphics[width=\textwidth]{water/rel_cum_vol_pred_err.pdf}
-\caption{Relative prediction error of cumulative water flow (y-axis) as a function of the forecast horizon (x-axis).}
-\label{fig:cum_vol_pred_err}
-\end{figure*}
+% \begin{figure*}[!th]
+% \centering
+% \includegraphics[width=\textwidth]{water/rel_cum_vol_pred_err.pdf}
+% \caption{Relative prediction error of cumulative water flow (y-axis) as a function of the forecast horizon (x-axis).}
+% \label{fig:cum_vol_pred_err}
+% \end{figure*}
+% 
+% \begin{figure*}[!th]
+% \centering
+% \includegraphics[width=\textwidth]{water/rel_hardness_pred_error_154.pdf}
+% \caption{Relative prediction error of water hardness (y-axis) as a function of the forecast horizon (x-axis).}
+% \label{fig:rel_hardness_pred_error_154}
+% \end{figure*}
 
 \begin{figure*}[!th]
 \centering
-\includegraphics[width=\textwidth]{water/rel_hardness_pred_error_154.pdf}
-\caption{Relative prediction error of water hardness (y-axis) as a function of the forecast horizon (x-axis).}
-\label{fig:rel_hardness_pred_error_154}
+\includegraphics[width=0.8\textwidth]{water/prediction_error_plot_154.pdf}
+\caption{Prediction error (X-axis) vs Forecast Horizon (Y-axis) for the hardness forecasting algorithm}
+\label{fig:prediction_error_plot_154}
 \end{figure*}
 
 \begin{figure}[!th]
 \centering
-\includegraphics[width=\textwidth]{water/ROC_154.pdf}
+\includegraphics[width=\textwidth]{water/ROC_154.png}
 \caption{Receiver operating characteristic for water hardness forecasting.}
 \label{fig:forecastingroc}
 \end{figure}
@@ -286,7 +293,7 @@ e_{p_r}(h) = \left| \frac{p(t-h)-s(t-h)}{s(t-h)} \right|
 \end{equation*}
 
 where $h$ is the number of hours in advance the algorithm is predicting, $p(t)$ is the prediction as a function of time, and $s(t)$ is the actual measured sensor value as a function of time.
- Computations of relative prediction error for cumulative flow are shown in Figure \ref{fig:cum_vol_pred_err}.
+% Computations of relative prediction error for cumulative flow are shown in Figure \ref{fig:cum_vol_pred_err}.
 
 Relative prediction error for cumulative flow is on average below 30\% and decreases for longer time horizons.
  The instantaneous flow signal tends to be very bursty---as fixtures turn on and turn off in the building, water flow starts and stops sporadically.
@@ -297,7 +304,8 @@ The hardness forecasting algorithm is intended to predict whether or not water s
  Since our water hardness sensor readings are sparse---long stretches of zero readings followed by short periods of hard water readings---the objective is to predict not only the exact value of the hardness sensor readings but also the presence or absence of hard water.
  If, during a forecasting horizon, the hardness value is not predicted accuractely but the presence or absence of a hard water event is correctly identified, then the algorithm has largely achieved its goal.
 
-A plot of the relative errors in hardness prediction is shown in Figure \ref{fig:rel_hardness_pred_error_154}.
+% A plot of the relative errors in hardness prediction is shown in Figure \ref{fig:rel_hardness_pred_error_154}.
+A plot of the prediction error vs the forecast horizon is shown in \ref{fig:prediction_error_plot_154}.
  On average, the relative prediction errors are close to zero for time horizons up to 24-hours in the future.
  The variance, however, increases for predictions made further into the future.
 
